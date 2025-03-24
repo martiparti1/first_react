@@ -1,4 +1,5 @@
 import dog from './assets/HAHA DOG.jpeg'
+import './card.css'
 
 export default function Card(){
     return(
