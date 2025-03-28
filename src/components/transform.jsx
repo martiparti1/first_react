@@ -20,8 +20,8 @@ function MyButton(){
             <div className="transform_body">
 
                 <button className={`${form ? 'bg-[rgb(61,19,61)] text-[rgb(198,108,198)] border-2 border-[rgb(198,108,198)]' : 'bg-[rgb(78,78,229)] text-white border-2 border-yellow-200'} rounded-full p-1`}onClick={transform}>i am buiton</button>
-                <p className="talk">{talkText}</p>
-                <p>click buiton to transform {char.name} into {char.form} form</p>
+                <p className="text-white">{talkText}</p>
+                <p className="text-white">click buiton to transform {char.name} into {char.form} form</p>
             </div>
         </>
     );
