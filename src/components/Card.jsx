@@ -9,7 +9,7 @@ export default function Card(){
             <img className = " max-w-auto max-h-80"src={dog} alt="" />
             <p className='text-black'>This is the title</p>
             <p>this is the subheading</p>
-            <Tag input = 'hui'/>
+            <Tag input = 'test'/>
         </div>
         </>
     );

@@ -8,7 +8,7 @@ export default function Playground(){
         <>
            <Card/>
            <MyButton/>
-           <Tag input = 'vtori hui'/>
+           <Tag input = 'vtori test'/>
         </>
       );    
 }
