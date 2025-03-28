@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import MyButton from './transform'
-import Card from './Card.jsx'
+import MyButton from './components/transform.jsx'
+import Card from './components/Card.jsx'
+import Tag from './components/Tag.jsx'
 
 function App() {
   
@@ -9,6 +10,7 @@ function App() {
     <>
        <Card/>
        <MyButton/>
+       <Tag/>
     </>
   )
 }
