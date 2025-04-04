@@ -1,19 +1,19 @@
 import CharacterCard from "./components/dbz/CharacterCard";
+import UniversalButton from "./components/dbz/Button.jsx"
 
 export default function DbzPlayground(){
     return(
         <>
-        <div className="flex flex-col justify-center items-center min-h-screen bg-radial from-orange-300 to-orange-400">
+        <div className="flex flex-col-reverse md:flex-col justify-center items-center min-h-screen bg-radial from-orange-300 to-orange-400">
 
-            <div className = 'flex flex-row gap-10'>
-                <button className="min-w-[10vw] min-h-[5vh] bg-green-500 rounded-sm mb-[5vh] cursor-pointer text-white text-bold hover:shadow-lg shadow-black-500 active:scale-95 transition-all duration-200">?Randomize?</button>
+            <div className = 'flex flex-col md:flex-row  gap-0 md:gap-10 mt-[5vh] md:mt-0'>
+                <UniversalButton bg_color={"bg-green-500"} text={'Randomize'}/>
 
-                <button className="min-w-[10vw] min-h-[5vh] bg-cyan-500 rounded-sm mb-[5vh] cursor-pointer text-white text-bold hover:shadow-lg shadow-black-500 active:scale-95 transition-all duration-200">FIGHT</button>
-
+                <UniversalButton bg_color={"bg-cyan-500"} text={'Fight'}/>
             </div>
 
 
-            <div className= "flex md:flex-row sm:flex-col flex-col gap-40">
+            <div className= "flex flex-row gap-5 md:gap-15 ">
                 <CharacterCard/>
                 <CharacterCard/>
             </div>
