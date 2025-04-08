@@ -27,7 +27,7 @@
     "globals": "^15.15.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.0.17",
-    "vite": "^6.2.4"
+    "vite": "^6.2.5"
   },
   "description": "first react project",
   "main": "eslint.config.js",

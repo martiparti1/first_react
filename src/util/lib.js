@@ -1,7 +1,6 @@
 export async function getRandomChars(char_count){
     try{
         let i = 1;
-        // const char_count = 2;
         let chars_arr = [];
 
         while(i < char_count + 1){
