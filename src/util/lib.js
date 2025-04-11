@@ -7,11 +7,13 @@ export async function getRandomChars(char_count){
 
             let valid_ids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 37, 38, 39, 40, 42, 43, 44, 63, 64, 65, 66, 67, 68];
 
-            let random_id = valid_ids[Math.floor(Math.random() * valid_ids.length)];
 
-            valid_ids.splice(valid_ids.indexOf(random_id),1);
+            let random_index = Math.floor(Math.random() * valid_ids.length)
+            let random_id = valid_ids[random_index];
 
-            const response = await fetch(`https://dragonball-api.com/api/characters/${random_id}`);
+            valid_ids.splice(valid_ids[random_index],1);
+
+            let response = await fetch(`https://dragonball-api.com/api/characters/${random_id}`);
             let data = await response.json()
 
             let character = {
@@ -31,7 +33,7 @@ export async function getRandomChars(char_count){
             i++;
         }
 
-        console.log("FETCHED TWO CHARS")
+        console.log(`FETCHED ${chars_arr.length} CHARS`)
         return chars_arr;
     }
 
@@ -43,7 +45,8 @@ export async function getRandomChars(char_count){
 
 
 export function parseKi(ki_string){
-    let number = parseInt(ki_string.split(" ")[0].split('.').join(''));
+    ki_string = ki_string.trimEnd();
+    let number = parseInt(ki_string.split(" ")[0].split(/[.,]/).join(''));
     let word = ki_string.split(" ")[1];
 
     if(typeof word == 'undefined') return number;
@@ -73,6 +76,7 @@ export function parseKi(ki_string){
         'googolplex': Number.MAX_VALUE
     }
 
-    return number * powerUnits[word];
+    return number * powerUnits[word.toLowerCase()];
     
 }
+

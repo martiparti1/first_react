@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export default function Redirect({link}){
+export function RedirectComponent({link}){
     useEffect(()=>{
         window.location.href = link;
     }, []);
