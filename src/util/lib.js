@@ -33,7 +33,8 @@ export async function getRandomChars(char_count){
             i++;
         }
 
-        console.log(`FETCHED ${chars_arr.length} CHARS`)
+        console.log(`FETCHED ${chars_arr.length} CHARS \n ${chars_arr[0].id} id of 0 \n ${chars_arr[1].id} id of 1`)
+
         return chars_arr;
     }
 

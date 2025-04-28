@@ -8,6 +8,8 @@ import { Popup } from "./util/lib.jsx";
 
 export default function DbzPlayground() {
     const [chars, setChars] = useState([]);
+    const [showPopup, setshowPopup] = useState(false);
+    const [popupText, setpopupText] = useState("")
     const navigate = useNavigate();
 
     
@@ -17,9 +19,18 @@ export default function DbzPlayground() {
     };
 
     function handleFight(chars){
-        if(parseKi(chars[0].ki) > parseKi(chars[1].ki)) alert(`${chars[0].name} wins!`)
-        else if (parseKi(chars[0].ki) < parseKi(chars[1].ki)) alert(`${chars[1].name} wins!`)
-        else alert("its a tie!")
+        if(parseKi(chars[0].ki) > parseKi(chars[1].ki)) {
+            setshowPopup(true);
+            setpopupText(`${chars[0].name} wins!`)
+        }
+        else if (parseKi(chars[0].ki) < parseKi(chars[1].ki)) {
+            setshowPopup(true);
+            setpopupText(`${chars[1].name} wins!`)
+        }
+        else {
+            setshowPopup(true);
+            setpopupText(`its a tie!!!`)
+        }
 
     }
     
@@ -29,7 +40,7 @@ export default function DbzPlayground() {
 
             <img className= {'w-15 self-start cursor-pointer rotate-180  absolute top-5 left-5'} src={arrow_right} onClick={()=> navigate('../')}/>
 
-            {<Popup visible={true}/>}
+            {<Popup text= {popupText} visible={showPopup} onClose={()=> setshowPopup(false)}/>}
             <div className="flex flex-col-reverse md:flex-col justify-center items-center">
 
                 <div className="flex flex-col md:flex-row gap-0 md:gap-10 mt-[5vh] md:mt-0">
